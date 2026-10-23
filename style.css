@@ -1,0 +1,308 @@
+
+/* Configurações gerais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --fundo: #10101b;
+  --cartao: #1b1b2b;
+  --roxo: #a78bfa;
+  --texto: #f5f3ff;
+  --texto-suave: #aaa8c0;
+  --borda: #34334b;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--fundo);
+  color: var(--texto);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 8%;
+  border-bottom: 1px solid var(--borda);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.logo span {
+  color: var(--roxo);
+}
+
+.etiqueta,
+.tag {
+  color: var(--roxo);
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+.container {
+  width: min(900px, 90%);
+  margin: 0 auto;
+}
+
+.apresentacao {
+  text-align: center;
+  padding: 65px 0 35px;
+}
+
+.apresentacao h1 {
+  max-width: 700px;
+  margin: 18px auto;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.15;
+}
+
+.apresentacao p {
+  max-width: 580px;
+  margin: 0 auto;
+  color: var(--texto-suave);
+}
+
+.simulador,
+.resultado {
+  background: var(--cartao);
+  border: 1px solid var(--borda);
+  border-radius: 22px;
+  padding: 32px;
+  margin: 20px auto;
+  max-width: 620px;
+}
+
+.simulador h2,
+.resultado h2 {
+  font-size: 1.6rem;
+  margin: 12px 0;
+}
+
+.icone {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: #30274b;
+  color: var(--roxo);
+  font-size: 2rem;
+}
+
+.descricao,
+.nota {
+  color: var(--texto-suave);
+}
+
+#formulario {
+  margin-top: 24px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.campo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--fundo);
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  padding: 0 16px;
+}
+
+.campo:focus-within {
+  border-color: var(--roxo);
+}
+
+input {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 16px 0;
+  color: var(--texto);
+  font-size: 1.1rem;
+}
+
+input:focus-visible {
+  outline: none;
+}
+
+.campo span {
+  color: var(--texto-suave);
+}
+
+button {
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  background: var(--roxo);
+  color: #171326;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 16px;
+  margin-top: 16px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+button:hover {
+  background: #c4b5fd;
+  transform: translateY(-2px);
+}
+
+button:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 3px;
+}
+
+.nota {
+  font-size: 0.85rem;
+  margin-top: 12px;
+}
+
+.resultado[hidden] {
+  display: none;
+}
+
+.resultado > p {
+  color: var(--texto-suave);
+  margin: 12px 0;
+}
+
+.estatisticas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 24px 0;
+}
+
+.estatistica {
+  background: var(--fundo);
+  border: 1px solid var(--borda);
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.estatistica span {
+  display: block;
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+}
+
+.estatistica strong {
+  display: block;
+  color: var(--roxo);
+  font-size: 1.8rem;
+  margin-top: 8px;
+}
+
+.reflexao {
+  background: #29233d;
+  border-left: 4px solid var(--roxo);
+  padding: 18px;
+  border-radius: 8px;
+}
+
+.reflexao h3 {
+  margin-bottom: 8px;
+}
+
+.reflexao p {
+  color: #ded8f5;
+}
+
+.botao-secundario {
+  background: transparent;
+  border: 1px solid var(--roxo);
+  color: var(--texto);
+}
+
+.botao-secundario:hover {
+  background: #30274b;
+}
+
+.informacao {
+  padding: 55px 0;
+}
+
+.informacao > h2 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.dicas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.dicas article {
+  background: var(--cartao);
+  border: 1px solid var(--borda);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.dicas article span {
+  color: var(--roxo);
+  font-weight: bold;
+}
+
+.dicas h3 {
+  margin: 10px 0;
+}
+
+.dicas p {
+  color: var(--texto-suave);
+  font-size: 0.92rem;
+}
+
+footer {
+  border-top: 1px solid var(--borda);
+  padding: 24px;
+  text-align: center;
+  color: var(--texto-suave);
+  font-size: 0.85rem;
+}
+
+/* Adaptação para celulares */
+@media (max-width: 600px) {
+  .topo {
+    padding: 18px 5%;
+  }
+
+  .apresentacao {
+    padding-top: 45px;
+  }
+
+  .simulador,
+  .resultado {
+    padding: 22px;
+  }
+
+  .dicas {
+    grid-template-columns: 1fr;
+  }
+
+  .estatisticas {
+    grid-template-columns: 1fr;
+  }
+}
+
